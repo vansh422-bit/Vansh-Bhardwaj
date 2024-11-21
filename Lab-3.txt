@@ -1,0 +1,101 @@
+Q1.  Write a program to print whether entered year is leap or not.
+check all possibilities of leap year using decision making statements .
+Print result as leap year or not.
+
+
+package demo;
+import java.util.Scanner;
+
+public class LeapYear {
+
+	public static void main(String[] args) 
+	{
+		Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a year: ");
+        int year = scanner.nextInt(); 		// Input
+
+        if (year % 4 == 0) 
+        {
+            if (year % 100 == 0) 
+            { 
+                if (year % 400 == 0)
+                {
+                    System.out.println(year + " is a leap year.");
+                } 
+                else 
+                {
+                    System.out.println(year + " is not a leap year.");
+                }
+            } 
+            else 
+            {
+                System.out.println(year + " is a leap year.");
+            }
+        } 
+        else {
+            System.out.println(year + " is not a leap year.");
+        }
+    }
+}
+____________________________________________________________________________________________________
+
+Q2. Write a program to illustrate use of inheritance as parent child relationship.
+Parent class :  User class with User details
+Child class : child class of User having salary details of user.
+Access parent class details using object of child class to print salary details of user.
+
+
+package demo;
+
+class UserDetails {			//Parent Class
+    String name;
+    int age;
+    String email;
+
+    public UserDetails(String name, int age, String email) {
+        this.name = name;
+        this.age = age;
+        this.email = email;
+    }
+
+    public void displayUserDetails() 		// Display
+    {
+        System.out.println("User Details:");
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("Email: " + email);
+    }
+}
+
+//Child Class
+
+class SalaryDetails extends UserDetails  //inheriting UserDetails class 
+{
+    double salary;
+
+    public SalaryDetails(String name, int age, String email, double salary) {
+        super(name, age, email); 					// Call to parent class
+        this.salary = salary;
+    }
+
+    public void displaySalaryDetails() 
+    {
+        displayUserDetails();
+        System.out.println("Salary: $" + salary);
+    }
+}
+
+//Main Class
+
+public class InheritanceMain {
+
+	public static void main(String[] args) 
+	{
+		// object of the child class below
+		SalaryDetails employee = new SalaryDetails("Harshit", 24, "harshit@example.com", 134555);
+
+		// calling child class object to display salary details
+		employee.displaySalaryDetails();
+		    }
+	}

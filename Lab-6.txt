@@ -1,0 +1,78 @@
+Q.1) Create a Book class with bookId, bookName and authorName.
+Create parameterized constructor to initialize the object. 
+Create an ArrayList of type Book and store all book objects into collections and display all book details.
+
+
+package demo;
+
+import java.util.ArrayList;
+
+class Book {
+    int bookId;
+    String bookName;
+    String authorName;
+
+    // Parameterized Constructor :
+    public Book(int bookId, String bookName, String authorName) {
+        this.bookId = bookId;
+        this.bookName = bookName;
+        this.authorName = authorName;
+    }
+
+    // Display :
+    public void displayBookDetails() {
+        System.out.println("Book ID: " + bookId);
+        System.out.println("Book Name: " + bookName);
+        System.out.println("Author Name: " + authorName);
+        System.out.println("==============================");
+    }
+}
+
+public class Lab6 {
+
+    public static void main(String[] args) {
+        
+        ArrayList<Book> books = new ArrayList<>();
+        books.add(new Book(1, "To Kill a Mockingbird", "Harper Lee"));
+        books.add(new Book(2, "1984", "George Orwell"));
+        books.add(new Book(3, "The Great Gatsby", "F. Scott Fitzgerald"));
+
+        for (Book book : books) {
+            book.displayBookDetails();
+        }
+    }
+}
+
+___________________________________________________________________________________________________
+
+Q.2) create ArrayList with few even and odd members in it. Write a Java program that calculates the sum of all even numbers present in an ArrayList of integers. 
+
+
+package demo;
+
+import java.util.ArrayList;
+
+public class Lab6 {
+
+    public static void main(String[] args) {
+
+        ArrayList<Integer> numbers = new ArrayList<>();
+        numbers.add(10);
+        numbers.add(15);
+        numbers.add(20);
+        numbers.add(25);
+        numbers.add(30);
+        numbers.add(35);
+
+        int sumofeven = 0;
+
+        for (int number : numbers) {  
+            if (number % 2 == 0) {  
+                sumofeven += number;  
+            }
+        }
+
+        System.out.println("Sum of even numbers: " + sumofeven);
+    }
+}
+

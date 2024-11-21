@@ -1,0 +1,47 @@
+Q.1) Write a program to input two numbers and find the maximum between two numbers using the conditional/ternary operator.
+
+
+package demo;
+
+public class MaxCheck {
+
+	public static void main(String[] args)
+	{	
+		int num1 = 100;		//initialize
+		int num2 = 200;
+		int Max = (num1 > num2)? num1 : num2;
+		System.out.println("Greatest: " +Max);
+	}
+}
+
+______________________________________________________________________________________________________________________________
+
+Q.2) Write a program to declare  a variable for integer number.
+Assign a value to it and shift it to left and right using shift operators.
+You can use shift by 1 place,  shift by 2 places.
+Print output for both left & right shifts.
+
+
+
+package com.demo;
+
+public class BitwiseTest {
+
+	public static void main(String[] args)
+	{
+		
+		int num = 25; // initialising Input
+
+		int ls1 = num << 1; 						// left Shift by 1 place
+		int ls2 = num << 2; 						// left Shift by 2 places
+
+		int rs1 = num >> 1; 						//right shift by 1 place
+		int rs2 = num >> 2; 						//right shift by 2 places
+
+		System.out.println("Entered Integer: " + num);
+		System.out.println("\nInteger After left shift by 1 place: " + ls1);
+		System.out.println("Integer After left shift by 2 places: " + ls2);
+		System.out.println("\nInteger After right shift by 1 place: " + rs1 );
+		System.out.println("Integer After right shift by 2 places: " + rs2 );
+	}
+}
