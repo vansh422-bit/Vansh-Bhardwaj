@@ -1,0 +1,131 @@
+Q1. Create one superclass HillStations and three subclasses Manali, Mussoorie, Gulmarg. Subclasses extend the superclass and override its location() and famousFor() method. 
+a) Call the location() and famousFor() method by the Parent class’, i.e. Hillstations class. As 	it refers to the base class object and the base class method overrides the superclass 		method; the base class method is invoked at runtime. 
+b) Call the location() and famousFor() method by the all subclass’,and print accordingly.
+
+
+Code:
+package com.inheritance;
+
+public class HillStations {
+    void location() {
+        System.out.println("Location of HillStation");
+    }
+    void famousFor() {
+        System.out.println("Famous for ");
+    }
+}
+
+public class Manali extends HillStations {
+@Override
+void location() {
+  System.out.println("Manali is located in Himachal Pradesh.");
+}
+
+@Override
+void famousFor() {
+  System.out.println("Manali is famous for its scenic beauty and adventure sports.");
+}
+}
+
+public class Mussoorie extends HillStations {
+@Override
+void location() {
+  System.out.println("Manali is located in Himachal Pradesh.");
+}
+
+@Override
+void famousFor() {
+  System.out.println("Manali is famous for its scenic beauty and adventure sports.");
+}
+}
+
+public class Gulmarg extends HillStations {
+@Override
+void location() {
+  System.out.println("Manali is located in Himachal Pradesh.");
+}
+
+@Override
+void famousFor() {
+  System.out.println("Manali is famous for its scenic beauty and adventure sports.");
+}
+}
+
+public class HillStaMain {
+
+    public static void main(String[] args) {
+        HillStations hillStation;
+
+        hillStation = new Manali();
+        hillStation.location();
+        hillStation.famousFor();
+
+        hillStation = new Mussoorie();
+        hillStation.location();
+        hillStation.famousFor();
+
+        hillStation = new Gulmarg();
+        hillStation.location();
+        hillStation.famousFor();
+
+        System.out.println("\nCalling through subclass object:");
+        Manali manali = new Manali();
+        manali.location();
+        manali.famousFor();
+
+        Mussoorie mussoorie = new Mussoorie();
+        mussoorie.location();
+        mussoorie.famousFor();
+
+        Gulmarg gulmarg = new Gulmarg();
+        gulmarg.location();
+        gulmarg.famousFor();
+    }
+}
+
+________________________________________________________________________________________________
+
+
+Q2. Write a Java program that demonstrates method overriding by creating a superclass called Animal and two subclasses called Dog and Cat. ● The Animal class should have a method called makeSound(), which simply prints "The animal makes a sound." ● The Dog and Cat classes should override this method to print "TheCat/The dog meows/barks" respectively. ● The program should allow the user to create and display objects of each class.
+
+Code:
+//Animal Class
+package com.inheritance;
+
+public class Animal 
+{
+	public void makeSound()
+	{
+		System.out.println("The Animal Makes a SOund");
+	}
+	public static void main(String[] args)      //main method
+	{
+		Animal animal = new Animal();
+		animal.makeSound();
+		
+		animal = new Dog();
+		animal.makeSound();
+		
+		animal = new Cat();
+		animal.makeSound();
+	}
+}
+
+
+//Dog class
+public class Dog extends Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("The dog barks.");
+    }
+}
+
+//Cat Class
+package com.inheritance;
+
+public class Cat extends Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("The cat meows.");
+    }
+}
